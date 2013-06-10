@@ -9,13 +9,14 @@
 // @include       http*
 // @require       https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js
 // ==/UserScript==
-
 "use strict";
 
-$("a.image[href*='File:']").each(function () {
-    var currentImage = $(this);
-    $.get($(this).attr("href"), function (data) {
-        var imgurl = $(".fullImageLink", data).find("a").attr("href");
-        $(currentImage).attr("href", imgurl);
+(function ($) {
+    $("a.image[href*='File:']").each(function () {
+        var currentImage = $(this);
+        $.get($(this).attr("href"), function (data) {
+            var imgurl = $(".fullImageLink", data).find("a").attr("href");
+            $(currentImage).attr("href", imgurl);
+        });
     });
-});
+})(jQuery);
