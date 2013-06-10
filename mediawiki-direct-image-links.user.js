@@ -1,24 +1,26 @@
 // ==UserScript==
 // @name          mediawiki-direct-image-links
 // @description   Replaces links to images on mediawiki sites with direct links.
-// @version       0.2
+// @version       0.3
 // @license       http://sam.zoy.org/wtfpl/COPYING
 // @namespace     https://github.com/silverwind
 // @updateURL     https://github.com/silverwind/mediawiki-direct-image-links/raw/master/mediawiki-direct-image-links.user.js
 // @downloadURL   https://github.com/silverwind/mediawiki-direct-image-links/raw/master/mediawiki-direct-image-links.user.js
 // @include       http*
-// @require       https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js
 // ==/UserScript==
 "use strict";
 
-this.$ = this.jQuery = jQuery.noConflict(true);
-
-(function ($) {
-    $("a.image[href*='File:']").each(function () {
-        var currentImage = $(this);
-        $.get($(this).attr("href"), function (data) {
-            var imgurl = $(".fullImageLink", data).find("a").attr("href");
-            $(currentImage).attr("href", imgurl);
-        });
-    });
-})(jQuery);
+var nodes = document.querySelectorAll("a.image[href*='File:']");
+for (var i = 0, len = nodes.length; i < len; i++) {
+    (function (dest, image) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", dest, true);
+        xhr.responseType = "document";
+        xhr.onload = function () {
+            if (this.status === 200) {
+                image.href = this.response.querySelectorAll(".fullImageLink > a")[0].href;
+            }
+        };
+        xhr.send(null);
+    })(nodes[i].href, nodes[i]);
+}
