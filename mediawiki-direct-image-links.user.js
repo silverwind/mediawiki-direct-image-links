@@ -11,6 +11,8 @@
 // ==/UserScript==
 "use strict";
 
+this.$ = this.jQuery = jQuery.noConflict(true);
+
 (function ($) {
     $("a.image[href*='File:']").each(function () {
         var currentImage = $(this);
