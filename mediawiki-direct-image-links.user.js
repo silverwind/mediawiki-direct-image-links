@@ -2,10 +2,10 @@
 // @name          mediawiki-direct-image-links
 // @description   Replaces links to images on mediawiki sites with direct links.
 // @version       0.3
-// @license       http://sam.zoy.org/wtfpl/COPYING
 // @namespace     https://github.com/silverwind
-// @updateURL     https://github.com/silverwind/mediawiki-direct-image-links/raw/master/mediawiki-direct-image-links.user.js
-// @downloadURL   https://github.com/silverwind/mediawiki-direct-image-links/raw/master/mediawiki-direct-image-links.user.js
+// @license       https://raw.github.com/silverwind/mediawiki-direct-image-links/master/README.md
+// @updateURL     https://raw.github.com/silverwind/mediawiki-direct-image-links/master/mediawiki-direct-image-links.user.js
+// @downloadURL   https://raw.github.com/silverwind/mediawiki-direct-image-links/master/mediawiki-direct-image-links.user.js
 // @include       http*
 // ==/UserScript==
 "use strict";
