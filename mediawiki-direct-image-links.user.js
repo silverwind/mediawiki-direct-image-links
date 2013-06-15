@@ -3,7 +3,7 @@
 // @description   Replaces links to images on mediawiki sites with direct links.
 // @version       0.3
 // @namespace     https://github.com/silverwind
-// @license       https://raw.github.com/silverwind/mediawiki-direct-image-links/master/README.md
+// @license       https://raw.github.com/silverwind/mediawiki-direct-image-links/master/LICENSE
 // @updateURL     https://raw.github.com/silverwind/mediawiki-direct-image-links/master/mediawiki-direct-image-links.user.js
 // @downloadURL   https://raw.github.com/silverwind/mediawiki-direct-image-links/master/mediawiki-direct-image-links.user.js
 // @include       http*
